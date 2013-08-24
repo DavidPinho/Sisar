@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui">
+	  
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Cardápio</title>
+	</h:head>
+	
+	<h:body>
+	
+	<div id="formulario" style="margin-top:30px">
+	<h:form id="form">  
+      
+    <p:panel header="Escolha Cardápio">  
+          
+        <h:panelGrid id="grid" columns="2" style="margin-bottom:10px">  
+            <f:facet name="header">  
+                <p:messages />  
+            </f:facet>  
+          
+             <h:outputLabel for="popupCal" value="Data:" /> 
+   			 <p:calendar value="#{CardapioBean.cardapio2.data}" id="popupCal" required="true" requiredMessage="Campo obrigatório"/>    
+                      
+            <h:outputLabel for="turno" value="Turno:" />  
+            <p:inputText id="turno"   
+                        value="#{CardapioBean.cardapio2.turno}" required="true" requiredMessage="Campo obrigatório"/>
+                        
+            <h:commandButton type="reset" value="Limpar"/>
+            <p:commandButton value="Escolher" update="tabela2"/>  
+            
+         
+        </h:panelGrid>  
+          
+    </p:panel> 
+    <div id="tabela" style="margin-top:30px">
+    <p:dataTable id="tabela2" var="item" value="#{CardapioBean.itens}" >  
+        <p:column >
+            <h:outputText value="#{item.categoria}" />            
+        </p:column>
+        <p:column>
+            <h:outputText value="#{item.nome}" />            
+        </p:column>
+        <p:column >  
+            <h:commandLink action="#{AvaliacaoBean.avaliar(item)}" value="Avaliar" style="color:#0000FF;"/>  
+        </p:column> 
+    </p:dataTable> 
+    </div> 
+    </h:form>
+	</div>
+	
+	
+	</h:body>
+</html>

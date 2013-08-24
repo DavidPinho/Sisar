@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13731766002160" configfile="/Sisar/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="cadastraItem.xhtml" x="554" y="178" id="pf13732668706770" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf13732668706771 pf13734884080433" inlinks="pf13732687957966 pf13734884080433" path="/cadastraItem.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="itens.xhtml" x="338" y="178" id="pf13732668706772" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" outlinks="pf13732687957966 pf137327275644722" inlinks="pf13732668706771 pf137327399294725" path="/itens.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios.xhtml" x="338" y="818" id="pf13732693678297" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" outlinks="pf13732693678298 pf137339671788728" inlinks="pf137326972145714 pf137339797501735" path="/usuarios.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastraUsuario.xhtml" x="122" y="626" id="pf13732693678299" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf137326972145714 pf137327082244218" inlinks="pf13732693678298 pf137327082244218" path="/cadastraUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="atualizaItem.xhtml" x="122" y="178" id="pf137327275644723" referenceLink="//@navigationRule.5/@navigationCase.1/@toViewId|" outlinks="pf137327399294725 pf13734884080444" inlinks="pf137327275644722 pf13734884080444" path="/atualizaItem.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="atualizaUsuario.xhtml" x="122" y="1010" id="pf137339671788729" referenceLink="//@navigationRule.7/@navigationCase.1/@toViewId|" outlinks="pf137339797501735 pf13734884080445" inlinks="pf137339671788728 pf13734884080445" path="/atualizaUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cardapios.xhtml" x="338" y="1394" id="pf137343274574239" referenceLink="//@navigationRule.10/@navigationCase.0/@toViewId|" outlinks="pf137343274574240 pf137346254532643" inlinks="pf137343274574240 pf13734646258752" path="/cardapios.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastraCardapio.xhtml" x="122" y="1394" id="pf137346254532644" referenceLink="//@navigationRule.10/@navigationCase.1/@toViewId|" outlinks="pf13734646258752 pf13734884080446" inlinks="pf137346254532643 pf13734884080446" path="/cadastraCardapio.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cardapioView.xhtml" x="338" y="1778" id="pf13734884080457" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" outlinks="pf13734884080458 pf13736481557180" inlinks="pf13734884080458 pf13736481557181" path="/cardapioView.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="avaliaItem.xhtml" x="122" y="1778" id="pf13736481557182" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf13736481557181" inlinks="pf13736481557180" path="/avaliaItem.xhtml"/>
+  <links id="pf13732668706771" target="pf13732668706772" source="pf13732668706770" outcome="insert"/>
+  <links id="pf13732687957966" target="pf13732668706770" source="pf13732668706772" outcome="novo"/>
+  <links id="pf13732693678298" target="pf13732693678299" source="pf13732693678297" outcome="novo"/>
+  <links id="pf137326972145714" target="pf13732693678297" source="pf13732693678299" outcome="insert"/>
+  <links id="pf137327275644722" target="pf137327275644723" source="pf13732668706772" outcome="editar"/>
+  <links id="pf137327399294725" target="pf13732668706772" source="pf137327275644723" outcome="update"/>
+  <links id="pf137339671788728" target="pf137339671788729" source="pf13732693678297" outcome="editar"/>
+  <links id="pf137339797501735" target="pf13732693678297" source="pf137339671788729" outcome="update"/>
+  <links id="pf137346254532643" target="pf137346254532644" source="pf137343274574239" outcome="novo"/>
+  <links id="pf13734646258752" target="pf137343274574239" source="pf137346254532644" outcome="insert"/>
+  <links id="pf13736481557180" target="pf13736481557182" source="pf13734884080457" outcome="load"/>
+  <links id="pf13736481557181" target="pf13734884080457" source="pf13736481557182" outcome="insert"/>
+  <links id="pf137327082244218" target="pf13732693678299" source="pf13732693678299" outcome="falha">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf137343274574240" target="pf137343274574239" source="pf137343274574239" outcome="excluir">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf13734884080433" target="pf13732668706770" source="pf13732668706770" outcome="falha">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf13734884080444" target="pf137327275644723" source="pf137327275644723" outcome="falha">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf13734884080445" target="pf137339671788729" source="pf137339671788729" outcome="falha">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf13734884080446" target="pf137346254532644" source="pf137346254532644" outcome="falha">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf13734884080458" target="pf13734884080457" source="pf13734884080457" outcome="lista">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+</pageflow:Pageflow>

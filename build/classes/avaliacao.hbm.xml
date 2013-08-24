@@ -1,0 +1,29 @@
+<?xml version="1.0"?><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.sisar.modelo.Avaliacao" table="avaliacao">
+		<id name="idAvaliacao" type="int" column="idavaliacao">
+			<generator class="increment" />
+		</id>
+
+		<property name="data">
+			<column name="data" />
+		</property>
+
+		<property name="nota">
+			<column name="nota" />
+		</property>
+
+		<property name="comentario">
+			<column name="comentario" />
+		</property>
+
+		<property name="idUsuario">
+			<column name="idusuario" />
+		</property>
+
+		<property name="idItem">
+			<column name="iditem" />
+		</property>
+	</class>
+</hibernate-mapping>

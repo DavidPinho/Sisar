@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+    
+       
+   
+    <managed-bean>
+    	<managed-bean-name>CardapioBean</managed-bean-name>
+    	<managed-bean-class>com.sisar.controlador.CardapioController</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>    
+    </managed-bean>    
+    <managed-bean>
+    	<managed-bean-name>ItemBean</managed-bean-name>
+    	<managed-bean-class>com.sisar.controlador.ItemController</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>    
+    </managed-bean> 
+    <managed-bean>
+    	<managed-bean-name>UsuarioBean</managed-bean-name>
+    	<managed-bean-class>com.sisar.controlador.UsuarioController</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>    
+    </managed-bean> 
+    <managed-bean>
+    	<managed-bean-name>AvaliacaoBean</managed-bean-name>
+    	<managed-bean-class>com.sisar.controlador.AvaliacaoController</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>    
+    </managed-bean>
+    
+    <!-- Cadastro de item -->
+    
+     <navigation-rule>
+     	<from-view-id>/cadastraItem.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>insert</from-outcome>
+     		<to-view-id>/itens.xhtml</to-view-id>
+     	</navigation-case>
+     	<navigation-case>
+     		<from-outcome>falha</from-outcome>
+     		<to-view-id>/cadastraItem.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+     
+     
+        <!-- Cadastro de Usuario -->
+    
+     <navigation-rule>
+     	<from-view-id>/cadastraUsuario.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>insert</from-outcome>
+     		<to-view-id>/usuarios.xhtml</to-view-id>
+     	</navigation-case>
+     	<navigation-case>
+     		<from-outcome>falha</from-outcome>
+     		<to-view-id>/cadastraUsuario.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+     
+     <!-- Chamada ao formulario de cadastro de item -->
+     
+     <navigation-rule>
+     	<from-view-id>/itens.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>novo</from-outcome>
+     		<to-view-id>/cadastraItem.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+     
+     <!-- Chamada ao formulario de cadastro de usuario -->
+     
+     <navigation-rule>
+     	<from-view-id>/usuarios.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>novo</from-outcome>
+     		<to-view-id>/cadastraUsuario.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+    
+    <!-- Edição de item -->
+    
+     <navigation-rule>
+     	<from-view-id>/itens.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>editar</from-outcome>
+     		<to-view-id>/atualizaItem.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+     
+     <!-- Update Item -->
+     
+     <navigation-rule>
+     	<from-view-id>/atualizaItem.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>update</from-outcome>
+     		<to-view-id>/itens.xhtml</to-view-id>
+     	</navigation-case>
+     	<navigation-case>
+     		<from-outcome>falha</from-outcome>
+     		<to-view-id>/atualizaItem.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+     
+     <!-- Edição de usuario -->
+    
+     <navigation-rule>
+     	<from-view-id>/usuarios.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>editar</from-outcome>
+     		<to-view-id>/atualizaUsuario.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+     
+     
+     <!-- Update Usuario -->
+     
+     <navigation-rule>
+     	<from-view-id>/atualizaUsuario.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>update</from-outcome>
+     		<to-view-id>/usuarios.xhtml</to-view-id>
+     	</navigation-case>
+     	<navigation-case>
+     		<from-outcome>falha</from-outcome>
+     		<to-view-id>/atualizaUsuario.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+     
+          <!-- Excluir Cardapio -->
+     
+     <navigation-rule>
+     	<from-view-id>/cardapios.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>excluir</from-outcome>
+     		<to-view-id>/cardapios.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+     
+     
+       <!-- Chamada ao formulario de cadastro de cardapio -->
+     
+     <navigation-rule>
+     	<from-view-id>/cardapios.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>novo</from-outcome>
+     		<to-view-id>/cadastraCardapio.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+     
+     <!-- Cadastro de Cardapio -->
+    
+     <navigation-rule>
+     	<from-view-id>/cadastraCardapio.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>insert</from-outcome>
+     		<to-view-id>/cardapios.xhtml</to-view-id>
+     	</navigation-case>
+     	<navigation-case>
+     		<from-outcome>falha</from-outcome>
+     		<to-view-id>/cadastraCardapio.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+     
+     
+     <!-- Lista Menu -->
+     <navigation-rule>
+     	<from-view-id>/cardapioView.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>lista</from-outcome>
+     		<to-view-id>/cardapioView.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+     
+     <!-- Avalia Item Form -->
+     <navigation-rule>
+     	<from-view-id>/cardapioView.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>load</from-outcome>
+     		<to-view-id>/avaliaItem.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+     
+          <!-- Avalia Item -->
+     <navigation-rule>
+     	<from-view-id>/avaliaItem.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>insert</from-outcome>
+     		<to-view-id>/cardapioView.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+     
+        <navigation-rule>
+     	<from-view-id>/avaliacoes.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>logout</from-outcome>
+     		<to-view-id>/login.jsp</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+     
+     
+  
+	
+
+</faces-config>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui">
+	  
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Cadastro de Usuário</title>
+	</h:head>
+	
+	<h:body>
+	
+	<h:form>  
+	
+    <p:growl id="messages"/>  
+    <p:menubar>  
+        <p:menuitem value="Home" url="/faces/avaliacoes.xhtml">   </p:menuitem>
+        <p:menuitem value="Cardápio" url="/faces/cardapios.xhtml"> </p:menuitem>
+        <p:menuitem value="Avaliações" url="/faces/avaliacoes.xhtml">    </p:menuitem>
+        <p:menuitem value="Itens"  url ="/faces/itens.xhtml">    </p:menuitem>
+        <p:menuitem value="Usuários" url ="/faces/usuarios.xhtml">   </p:menuitem>
+        <p:menuitem value="Logout" icon="ui-icon-extlink" action="#{UsuarioBean.logout}"></p:menuitem>  
+    </p:menubar>
+	</h:form> 
+	 
+	<div id="formulario" style="margin-top:30px">
+	<h:form id="form">  
+      
+    <p:panel header="Cadastro de Usuário">  
+          
+        <h:panelGrid id="grid" columns="2" style="margin-bottom:10px">  
+            <f:facet name="header">  
+                <p:messages />  
+            </f:facet>  
+          
+            <h:outputLabel for="nome" value="Nome:" />  
+            <p:inputText id="nome"   
+                        value="#{UsuarioBean.usuario2.nome}" required="true" requiredMessage="Campo obrigatório"/>  
+                      
+            <h:outputLabel for="senha" value="Senha:" />  
+            <p:password id="senha"   
+                        value="#{UsuarioBean.usuario2.senha}" required="true"   
+                        requiredMessage="Campo Obrigatório" validatorMessage="Digite senha entre 5 e 15 caracteres">
+            <f:validateLength minimum="5" maximum="15" for="senha"></f:validateLength> 
+            </p:password>
+            
+                                  
+            <h:commandButton type="reset" value="Limpar"/>
+            <h:commandButton action="#{UsuarioBean.insert}" value="Cadastrar"/>  
+        </h:panelGrid>  
+          
+    </p:panel>  
+    </h:form>
+	</div>
+	
+	
+	</h:body>
+</html>

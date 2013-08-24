@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui">
+	  
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Avaliação de Item</title>
+	</h:head>
+	
+	<h:body>
+	 
+	<div id="formulario" style="margin-top:30px">
+	<h:form id="form">  
+      
+    <p:panel header="Avaliação de Item">  
+          
+        <h:panelGrid id="grid" columns="2" style="margin-bottom:10px">  
+            <f:facet name="header">  
+                <p:messages />  
+            </f:facet>  
+          
+            <h:outputLabel for="nome" value="Item:" />  
+            <p:inputText id="nome"   
+                        value="#{AvaliacaoBean.item.nome}" required="true" requiredMessage="Campo obrigatório"/>       
+            <h:outputLabel for="nota" value="Nota:" />  
+            <p:inputText id="nota"   
+                        value="#{AvaliacaoBean.avaliacao.nota}" required="true"   
+                        requiredMessage="Campo Obrigatório"/>
+            <h:outputLabel for="comentario" value="Comentário:" />  
+            <p:inputText id="comentario"   
+                        value="#{AvaliacaoBean.avaliacao.comentario}" required="true"   
+                        requiredMessage="Campo Obrigatório"/>
+            <h:commandButton type="reset" value="Limpar"/>
+            <h:commandButton action="#{AvaliacaoBean.insert}" value="Avaliar"/>  
+            <h:inputHidden id="iditem" value="#{AvaliacaoBean.item.idItem}" />
+        </h:panelGrid>  
+          
+    </p:panel>  
+    </h:form>
+	</div>
+	
+	
+	</h:body>
+</html>

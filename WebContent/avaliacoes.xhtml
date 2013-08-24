@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui">
+	  
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Avaliações</title>
+	</h:head>
+	
+	<h:body>
+	
+	<h:form>  
+	
+    <p:growl id="messages"/>  
+    <p:menubar>  
+        <p:menuitem value="Relatórios">   </p:menuitem>
+        <p:menuitem value="Cardápio" url="/faces/cardapios.xhtml"> </p:menuitem>
+        <p:menuitem value="Avaliações" url="/faces/avaliacoes.xhtml">    </p:menuitem>
+        <p:menuitem value="Itens"  url ="/faces/itens.xhtml">    </p:menuitem>
+        <p:menuitem value="Usuários" url ="/faces/usuarios.xhtml">   </p:menuitem>
+        <p:menuitem value="Logout" icon="ui-icon-extlink" action="#{UsuarioBean.logout}"></p:menuitem>  
+    </p:menubar>
+	</h:form> 
+	 
+	<div id="tabela" style="margin-top:30px">
+	<h:form>  
+    <p:dataTable var="avaliacao" value="#{AvaliacaoBean.todas}" paginator="true" rows="10">  
+        <p:column headerText="Item">  
+            <h:outputText value="#{AvaliacaoBean.getItemName(avaliacao.idItem)}" />            
+        </p:column>  
+        <p:column headerText="Nota">  
+            <h:outputText value="#{avaliacao.nota}" />  
+        </p:column>  
+        <p:column headerText="Comentário">  
+            <h:outputText value="#{avaliacao.comentario}" />  
+        </p:column> 
+        <p:column headerText="Data">  
+            <h:outputText value="#{avaliacao.data}" />  
+        </p:column>  
+         <p:column headerText="Usuário">  
+            <h:outputText value="#{AvaliacaoBean.getUserName(avaliacao.idUsuario)}" />  
+         </p:column>        
+    </p:dataTable>  
+	</h:form>  
+	</div>
+	
+	
+	</h:body>
+</html>

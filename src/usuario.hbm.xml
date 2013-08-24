@@ -1,0 +1,17 @@
+<?xml version="1.0"?><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.sisar.modelo.Usuario" table="usuario">
+		<id name="idUsuario" type="int" column="idusuario">
+			<generator class="native" />
+		</id>
+
+		<property name="nome">
+			<column name="nome" />
+		</property>
+
+		<property name="senha">
+			<column name="senha" />
+		</property>
+	</class>
+</hibernate-mapping>

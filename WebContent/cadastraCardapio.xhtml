@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui">
+	  
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Cadastro de Cardápio</title>
+	</h:head>
+	
+	<h:body>
+	
+	<h:form>  
+	
+    <p:growl id="messages"/>  
+    <p:menubar>  
+        <p:menuitem value="Home" url="/faces/avaliacoes.xhtml">   </p:menuitem>
+        <p:menuitem value="Cardápio" url="/faces/cardapios.xhtml"> </p:menuitem>
+        <p:menuitem value="Avaliações" url="/faces/avaliacoes.xhtml">    </p:menuitem>
+        <p:menuitem value="Itens"  url ="/faces/itens.xhtml">    </p:menuitem>
+        <p:menuitem value="Usuários" url ="/faces/usuarios.xhtml">   </p:menuitem>
+        <p:menuitem value="Logout" icon="ui-icon-extlink" action="#{UsuarioBean.logout}"></p:menuitem>  
+    </p:menubar>
+	</h:form> 
+	 
+	<div id="formulario" style="margin-top:30px">
+	<h:form id="form">  
+      
+    <p:panel header="Cadastro de Cardápio">  
+          
+        <h:panelGrid id="grid" columns="2" style="margin-bottom:10px">  
+            <f:facet name="header">  
+                <p:messages />  
+            </f:facet>  
+          
+             <h:outputLabel for="popupCal" value="Data:" /> 
+   			 <p:calendar value="#{CardapioBean.cardapio2.data}" id="popupCal" required="true" requiredMessage="Campo obrigatório"/>    
+                      
+            <h:outputLabel for="turno" value="Turno:" />  
+            <p:inputText id="turno"   
+                        value="#{CardapioBean.cardapio2.turno}" required="true" requiredMessage="Campo obrigatório"/>
+            
+              
+             <h:outputLabel value="Guarnição 1:" for="ac1" />  
+             <p:autoComplete id="ac1" minQueryLength="3"  value="#{CardapioBean.guarnicao1}"  required="true" requiredMessage="Campo obrigatório" effect="fade" completeMethod="#{CardapioBean.complete}"/>   
+             
+             <h:outputLabel value="Guarnição 2:" for="ac2" />  
+             <p:autoComplete id="ac2" minQueryLength="3"  value="#{CardapioBean.guarnicao2}" required="true" requiredMessage="Campo obrigatório" effect="fade" completeMethod="#{CardapioBean.complete}"/>
+              
+             <h:outputLabel value="Salada:" for="ac3" />  
+             <p:autoComplete id="ac3" minQueryLength="3"  value="#{CardapioBean.salada}" required="true" requiredMessage="Campo obrigatório" effect="fade" completeMethod="#{CardapioBean.complete}"/>                    
+           
+             <h:outputLabel value="Proteína:" for="ac4" />  
+             <p:autoComplete id="ac4" minQueryLength="3"  value="#{CardapioBean.proteina}" required="true" requiredMessage="Campo obrigatório" effect="fade" completeMethod="#{CardapioBean.complete}"/>
+           
+             <h:outputLabel value="Vegetariano:" for="ac5" />  
+             <p:autoComplete id="ac5" minQueryLength="3"  value="#{CardapioBean.vegetariano}" required="true" requiredMessage="Campo obrigatório" effect="fade" completeMethod="#{CardapioBean.complete}"/>
+             
+             <h:outputLabel value="Suco:" for="ac6" />  
+             <p:autoComplete id="ac6" minQueryLength="3"  value="#{CardapioBean.suco}" required="true" requiredMessage="Campo obrigatório" effect="fade" completeMethod="#{CardapioBean.complete}"/>
+             
+             <h:outputLabel value="Sobremesa:" for="ac7" />  
+             <p:autoComplete id="ac7" minQueryLength="3"  value="#{CardapioBean.sobremesa}" required="true" requiredMessage="Campo obrigatório" effect="fade" completeMethod="#{CardapioBean.complete}"/>
+           
+            <h:commandButton type="reset" value="Limpar"/>
+            <h:commandButton action="#{CardapioBean.insert}" value="Cadastrar"/>  
+        </h:panelGrid>  
+          
+    </p:panel>  
+    </h:form>
+	</div>
+	
+	
+	</h:body>
+</html>
