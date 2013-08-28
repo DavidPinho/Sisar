@@ -8,39 +8,40 @@
 	  
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-		<title>Usuários</title>
+		<title>Agendamentos</title>
 	</h:head>
 	
 	<h:body>
 	
-	 <h:form>  
+		
+	<h:form>  
 	
     <p:growl id="messages"/>  
     <p:menubar>  
         <p:menuitem value="Relatórios">   </p:menuitem>
-        <p:menuitem value="Cardápio" url="/faces/cardapios.xhtml"> </p:menuitem>
-        <p:menuitem value="Avaliações" url="/faces/avaliacoes.xhtml">    </p:menuitem>
-        <p:menuitem value="Itens"  url ="/faces/itens.xhtml">    </p:menuitem>
-        <p:menuitem value="Usuários" url ="/faces/usuarios.xhtml">   </p:menuitem>
-        <p:menuitem value="Agendamentos" url ="/faces/agendamentos.xhtml">   </p:menuitem>
+        <p:menuitem value="Cardápio" url="/faces/cardapioView.xhtml"> </p:menuitem>
+        <p:menuitem value="Agendamentos" url ="/faces/agendamentosCliente.xhtml">   </p:menuitem>
         <p:menuitem value="Logout" icon="ui-icon-extlink" action="#{UsuarioBean.logout}"></p:menuitem>  
     </p:menubar>
 	</h:form> 
 	
 	<div id="tabela" style="margin-top:30px">
 	<h:form>  
-    <p:dataTable var="usuario" value="#{UsuarioBean.todas}" paginator="true" rows="10">  
-        <p:column headerText="Nome">
-            <h:outputText value="#{usuario.nome}" />            
+    <p:dataTable var="agendamento" value="#{AgendamentoBean.getTodasPorUsuario()}" paginator="true" rows="10">  
+        <p:column headerText="Usuario">
+            <h:outputText value="#{AgendamentoBean.getUserName(agendamento.idUsuario)}" />            
         </p:column>
-        <p:column headerText="Senha">
-            <h:outputText value="#{usuario.senha}" />            
+        <p:column headerText="Data">
+            <h:outputText value="#{agendamento.data}" />            
+        </p:column>
+                <p:column headerText="Hora">
+            <h:outputText value="#{agendamento.hora}:00" />            
         </p:column>
         <p:column headerText="">  
-            <h:commandLink action="#{UsuarioBean.editar}" value="Alterar" style="color:#0000FF;"/>  
+            <h:commandLink action="#{AgendamentoBean.excluir}" value="Cancelar" style="color:#0000FF;"/>  
         </p:column> 
     </p:dataTable>  
-    <h:commandLink action="#{UsuarioBean.novo}" value="Cadastrar novo Usuário"/>
+      <h:commandLink action="#{AgendamentoBean.novo}" value="Realizar Agendamento"/>
 	</h:form>  
 	</div>
 	

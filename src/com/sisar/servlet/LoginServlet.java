@@ -81,7 +81,7 @@ public class LoginServlet extends HttpServlet {
 		  if(user.getNome().equals("admin")){
 			  rd = request.getRequestDispatcher("/faces/avaliacoes.xhtml");
 		  } else{
-			  rd =request.getRequestDispatcher("/redirect.jsp");
+			  rd =request.getRequestDispatcher("/faces/cardapioView.xhtml");
 		  }
 		  rd.forward(request, response);
 		}

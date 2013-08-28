@@ -2,14 +2,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:p="http://primefaces.org/ui">
 	  
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-		<title>Avaliação de Item</title>
+		<title>Agendar</title>
 	</h:head>
 	
+	<h:body>
+
 	<h:form>  
 	
     <p:growl id="messages"/>  
@@ -19,36 +22,38 @@
         <p:menuitem value="Agendamentos" url ="/faces/agendamentosCliente.xhtml">   </p:menuitem>
         <p:menuitem value="Logout" icon="ui-icon-extlink" action="#{UsuarioBean.logout}"></p:menuitem>  
     </p:menubar>
-	</h:form> 
-	
-	<h:body>
+	</h:form>
 	 
 	<div id="formulario" style="margin-top:30px">
 	<h:form id="form">  
       
-    <p:panel header="Avaliação de Item">  
+    <p:panel header="Agendar">  
           
         <h:panelGrid id="grid" columns="2" style="margin-bottom:10px">  
             <f:facet name="header">  
                 <p:messages />  
             </f:facet>  
           
-            <h:outputLabel for="nome" value="Item:" />  
-            <p:inputText id="nome"   
-                        value="#{AvaliacaoBean.item.nome}" required="true" requiredMessage="Campo obrigatório"/>       
-            <h:outputLabel for="nota" value="Nota:" />  
-            <p:inputText id="nota"   
-                        value="#{AvaliacaoBean.avaliacao.nota}" required="true"   
-                        requiredMessage="Campo Obrigatório"/>
-            <h:outputLabel for="comentario" value="Comentário:" />  
-            <p:inputText id="comentario"   
-                        value="#{AvaliacaoBean.avaliacao.comentario}" required="true"   
-                        requiredMessage="Campo Obrigatório"/>
+             <h:outputLabel for="popupCal" value="Dia:" /> 
+   			 <p:calendar value="#{AgendamentoBean.agendamento.data}" id="popupCal" required="true" requiredMessage="Campo obrigatório"/>    
+                      
+             <h:outputLabel for="hora" value="Hora:" />  
+          	 <p:selectOneMenu value="#{AgendamentoBean.agendamento.hora}">  
+               <f:selectItem itemLabel="Escolha seu Horário" itemValue="" />  
+               <f:selectItem itemLabel="11:00 as 12:00" itemValue="11" />  
+               <f:selectItem itemLabel="12:00 as 13:00" itemValue="12" />  
+               <f:selectItem itemLabel="13:00 as 14:00" itemValue="13" /> 
+               <f:selectItem itemLabel="17:00 as 18:00" itemValue="17" />
+               <f:selectItem itemLabel="18:00 as 19:00" itemValue="18" />
+               <f:selectItem itemLabel="19:00 as 20:00" itemValue="19" />       
+      		 </p:selectOneMenu>  
+  
+                        
             <h:commandButton type="reset" value="Limpar"/>
-            <h:commandButton action="#{AvaliacaoBean.insert}" value="Avaliar"/>  
-            <h:inputHidden id="iditem" value="#{AvaliacaoBean.item.idItem}" />
+            <h:commandButton action="#{AgendamentoBean.insert}" value="Agendar"/>  
+            
+         
         </h:panelGrid>  
-          
     </p:panel>  
     </h:form>
 	</div>

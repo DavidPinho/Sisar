@@ -13,6 +13,11 @@
     	<managed-bean-class>com.sisar.controlador.CardapioController</managed-bean-class>
     	<managed-bean-scope>session</managed-bean-scope>    
     </managed-bean>    
+        <managed-bean>
+    	<managed-bean-name>AgendamentoBean</managed-bean-name>
+    	<managed-bean-class>com.sisar.controlador.AgendamentoController</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>    
+    </managed-bean>  
     <managed-bean>
     	<managed-bean-name>ItemBean</managed-bean-name>
     	<managed-bean-class>com.sisar.controlador.ItemController</managed-bean-class>
@@ -198,6 +203,39 @@
      	</navigation-case>
      </navigation-rule>
      
+     
+      <!-- Excluir Agendamento -->
+     
+     <navigation-rule>
+     	<from-view-id>/agendamentos.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>excluir</from-outcome>
+     		<to-view-id>/agendamentos.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+     
+      <!-- Chamada ao formulario de cadastro de Agendamento -->
+     
+     <navigation-rule>
+     	<from-view-id>/agendamentosCliente.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>novo</from-outcome>
+     		<to-view-id>/cadastraAgendamento.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
+     
+     <!--  Cadastro de Agendamento -->
+      <navigation-rule>
+     	<from-view-id>/cadastraAgendamento.xhtml</from-view-id>
+     	<navigation-case>
+     		<from-outcome>insert</from-outcome>
+     		<to-view-id>/agendamentosCliente.xhtml</to-view-id>
+     	</navigation-case>
+     	<navigation-case>
+     		<from-outcome>falha</from-outcome>
+     		<to-view-id>/cadastraAgendamento.xhtml</to-view-id>
+     	</navigation-case>
+     </navigation-rule>
      
   
 	

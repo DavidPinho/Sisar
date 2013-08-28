@@ -90,6 +90,32 @@ public class UsuarioDAO {
 	}
 	
 	
+	public Usuario getOneByIdHib(int idUsuario) throws SQLException{
+		session = HibernateUtil.getInstance();
+		Transaction tx = null;
+		Usuario usuario = null;
+		try {
+			
+			tx = session.beginTransaction();
+			List<Usuario> usuarios = session.createQuery("from Usuario as u where u.idUsuario = :idUsuario").setInteger("idUsuario", idUsuario).list();   
+			for (Iterator<Usuario> iter = usuarios.iterator(); iter.hasNext();)    
+			  usuario = iter.next();    				  
+			tx.commit();	
+			
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			tx.rollback();
+		}finally{
+			session.flush();
+			session.close();
+		}
+		return usuario;
+		
+	}
+	
+	
+	
+	
 //----------------------------------------------------------------------------------------------------------	
 	
 	

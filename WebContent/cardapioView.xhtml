@@ -10,6 +10,17 @@
 		<title>Cardápio</title>
 	</h:head>
 	
+	<h:form>  
+	
+    <p:growl id="messages"/>  
+    <p:menubar>  
+        <p:menuitem value="Relatórios">   </p:menuitem>
+        <p:menuitem value="Cardápio" url="/faces/cardapioView.xhtml"> </p:menuitem>
+        <p:menuitem value="Agendamentos" url ="/faces/agendamentosCliente.xhtml">   </p:menuitem>
+        <p:menuitem value="Logout" icon="ui-icon-extlink" action="#{UsuarioBean.logout}"></p:menuitem>  
+    </p:menubar>
+	</h:form> 
+	
 	<h:body>
 	
 	<div id="formulario" style="margin-top:30px">

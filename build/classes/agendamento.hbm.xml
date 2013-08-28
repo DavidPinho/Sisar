@@ -1,0 +1,21 @@
+<?xml version="1.0"?><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.sisar.modelo.Agendamento" table="agendamento">
+		<id name="idAgendamento" type="int" column="idagendamento">
+			<generator class="native" />
+		</id>
+
+		<property name="data">
+			<column name="data" />
+		</property>
+
+		<property name="idUsuario">
+			<column name="idusuario" />
+		</property>
+		
+		<property name="hora">
+			<column name="hora" />
+		</property>
+	</class>
+</hibernate-mapping>

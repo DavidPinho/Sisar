@@ -34,6 +34,7 @@
 		<mapping resource="item.hbm.xml" />
 		<mapping resource="avaliacao.hbm.xml" />
 		<mapping resource="cardapio.hbm.xml" />
+		<mapping resource="agendamento.hbm.xml" />
 	
 
 
